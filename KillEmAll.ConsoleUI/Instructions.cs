@@ -12,6 +12,7 @@
 
         public static GameState Help()
         {
+            Console.Clear();
             Settings.Init();
             ConsoleRenderer.DrawTextOnPostion(1, 30, instructions);
             ConsoleRenderer.DrawTextOnPostion(2, 0, line);
