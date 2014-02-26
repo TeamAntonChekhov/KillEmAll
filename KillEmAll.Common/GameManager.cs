@@ -95,5 +95,69 @@ namespace KillEmAll.Common
         {
             UserInput(this, new EventArgs());
         }
+
+        public void HandleItemUse(string itemName)
+        {
+            var item = FindObjectByName(this.Player.Inventory, itemName);
+
+            this.Player.Use(item);
+        }
+
+        public void HandleItemDrop(string itemName)
+        {
+            var item = FindObjectByName(this.Player.Inventory, itemName);
+
+            this.Player.RemoveItem(item);
+            this.currentLocation.AddItem(item);
+        }
+
+        public void HandleItemPickUp(string itemName)
+        {
+            var item = FindObjectByName(this.currentLocation.Items, itemName);
+
+            this.Player.AddItem(item);
+            this.currentLocation.RemoveItem(item);
+        }
+
+        public void HandleAttackEnemy(string enemyName)
+        {
+            var enemy = FindObjectByName(this.currentLocation.Characters, enemyName);
+
+            this.Player.Attack(enemy);
+        }
+
+        public void HandleChangeLocation(string locationName)
+        {
+            var location = FindObjectByName(this.currentLocation.Exits, locationName);
+
+            this.currentLocation = location;
+        }
+
+        private GameObject FindObjectByName(IEnumerable<GameObject> gameObjectCollection, string objectName)
+        {
+            GameObject foundGameObject = null;
+
+            foreach (var gameObject in gameObjectCollection)
+            {
+                if (gameObject.Name == objectName)
+                {
+                    foundGameObject = gameObject;
+                }
+            }
+
+            if (foundGameObject == null)
+            {
+                // TODO: 
+                // Implement GameObjectNotFoundException(string objectName)
+
+                //throw new GameObjectNotFoundException(objectName);
+
+                throw new NotImplementedException();
+            }
+            else
+            {
+                return foundGameObject;
+            }
+        } 
     }
 }
