@@ -42,7 +42,7 @@ namespace KillEmAll.ConsoleUI
                 }
                 catch (GameObjectNotFoundException e)
                 {
-                    ConsoleRenderer.AddNotification(new Notification(e.Message, NotificationType.Error));
+                   ConsoleRenderer.AddNotification(new Notification(e.Message, NotificationType.Error));
                 }
             }
         }
