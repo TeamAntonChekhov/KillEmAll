@@ -9,6 +9,7 @@ namespace KillEmAll.Common
     {
         static Player instance;
         private int experience;
+        private double maxHealth;
 
         private Player(string name)
             : base(name, CharacterType.Player)
@@ -17,6 +18,7 @@ namespace KillEmAll.Common
             this.Experience = 0;
             this.Health += 50;
             this.Damage += 5;
+            this.MaxHealth = this.Health;
         }
 
         public static Player Instance
@@ -28,6 +30,18 @@ namespace KillEmAll.Common
                     instance = new Player("Goshko");
                 }
                 return instance;
+            }
+        }
+
+        public double MaxHealth
+        {
+            get
+            {
+                return this.maxHealth;
+            }
+            private set
+            {
+                this.maxHealth = value;
             }
         }
 
@@ -65,7 +79,11 @@ namespace KillEmAll.Common
 
         private void LevelUp()
         {
-            this.level++;
+            this.Level++;
+            this.MaxHealth *= levelIncreaseFactor;
+            this.Armor *= levelIncreaseFactor;
+            this.Damage *= levelIncreaseFactor;
+            this.Health = this.MaxHealth;
         }
 
         private bool GainExpirience(int expReward)
