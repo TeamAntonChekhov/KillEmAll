@@ -3,3 +3,8 @@ C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.Common\bin\D
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.Common\bin\Debug\KillEmAll.Common.pdb
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.Common\obj\Debug\KillEmAll.Common.dll
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.Common\obj\Debug\KillEmAll.Common.pdb
+C:\Users\Bo\Documents\GitHub\KillEmAll\KillEmAll.Common\bin\Debug\KillEmAll.Common.dll
+C:\Users\Bo\Documents\GitHub\KillEmAll\KillEmAll.Common\bin\Debug\KillEmAll.Common.pdb
+C:\Users\Bo\Documents\GitHub\KillEmAll\KillEmAll.Common\obj\Debug\KillEmAll.Common.csprojResolveAssemblyReference.cache
+C:\Users\Bo\Documents\GitHub\KillEmAll\KillEmAll.Common\obj\Debug\KillEmAll.Common.dll
+C:\Users\Bo\Documents\GitHub\KillEmAll\KillEmAll.Common\obj\Debug\KillEmAll.Common.pdb
