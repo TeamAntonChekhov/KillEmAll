@@ -29,33 +29,58 @@ namespace KillEmAll.Common
 
         private static void InitializeDungeons()
         {
-            Dungeon firstDungeon = new Dungeon("InitialDungeon",
+            Dungeon firstDungeon = new Dungeon("ZombieLake",
                 new HashSet<Character>()
                 {
-                    new DamageDealer("Monster1", 1),
-                    new DamageDealer("Monster2", 1),
-                    new DamageDealer("Monster3", 1),
+                    new DamageDealer("DeadCrusader", 1),
+                    new DamageDealer("ZombieSoldier", 1),
+                    new DamageDealer("DragonZombie", 1),
+                },
+                new Collection<Item>()
+                {
+                    new Potion("HealPotion"),
+                    new Potion("PoisonPotion"),
+                });
+
+            Dungeon secondDungeon = new Dungeon("InsectBeehive",
+                new HashSet<Character>()
+                {
+                    new DamageDealer("GiantSpider", 1),
+                    new DamageDealer("LadyOfTheCrypt", 1),
+                    new DamageDealer("Larva", 1),
                 },
                 new Collection<Item>()
                 {
                     new Potion("Heal Potion"),
                     new Potion("Heal Potion"),
                 });
-
-            Dungeon secondDungeon = new Dungeon("SecondaryDungeon",
-                new HashSet<Character>()
+            Dungeon thirdDungeon = new Dungeon("SpiderNest",
+               new HashSet<Character>()
                 {
-                    new DamageDealer("Monster1", 1),
-                    new DamageDealer("Monster2", 1),
-                    new DamageDealer("Monster3", 1),
+                    new DamageDealer("GiantSpider", 1),
+                    new DamageDealer("LadyOfTheCrypt", 1),
+                    new DamageDealer("BlackWidow", 1),
                 },
-                new Collection<Item>()
+               new Collection<Item>()
+                {
+                    new Potion("Heal Potion"),
+                    new Potion("Heal Potion"),
+                });
+            Dungeon fourthDungeon = new Dungeon("SpiritForest",
+               new HashSet<Character>()
+                {
+                    new DamageDealer("Ghost", 1),
+                    new DamageDealer("Wraith", 1),
+                    new DamageDealer("Banshee", 1),
+                },
+               new Collection<Item>()
                 {
                     new Potion("Heal Potion"),
                     new Potion("Heal Potion"),
                 });
 
-            dungeons.Add(new Dungeon("FirstDungeon", new HashSet<Character>(), new Collection<Item>()));
+
+            dungeons.Add(new Dungeon("ZombieLake", new HashSet<Character>(), new Collection<Item>()));
             dungeons.Add(new Dungeon("SecondDungeon", new HashSet<Character>(), new Collection<Item>()));
             dungeons.Add(new Dungeon("ThirdDungeon", new HashSet<Character>(), new Collection<Item>()));
 
