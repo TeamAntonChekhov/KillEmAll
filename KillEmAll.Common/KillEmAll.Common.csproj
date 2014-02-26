@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IExitable.cs" />
     <Compile Include="Interfaces\IFighter.cs" />
+    <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Items.cs" />
     <Compile Include="Interfaces\IUsable.cs" />
     <Compile Include="Location.cs" />

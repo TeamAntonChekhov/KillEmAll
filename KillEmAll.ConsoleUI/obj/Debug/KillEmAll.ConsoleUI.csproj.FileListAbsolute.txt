@@ -22,3 +22,6 @@ C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\KillEmAll\KillEmAll.Consol
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\KillEmAll\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.Common.dll
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\KillEmAll\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.Common.pdb
 C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\KillEmAll\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\Ani\Documents\GitHub\KillEmAll\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.ConsoleUI.exe.config
+C:\Users\Ani\Documents\GitHub\KillEmAll\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.exe
+C:\Users\Ani\Documents\GitHub\KillEmAll\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.pdb
