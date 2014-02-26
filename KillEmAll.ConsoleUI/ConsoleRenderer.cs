@@ -7,27 +7,10 @@ using KillEmAll.Common;
 
 namespace KillEmAll.ConsoleUI
 {
-    static class ConsoleRenderer
+    public static class ConsoleRenderer
     {
-        private static ScreenSymbol[,] screenBuffer;
 
-        static ConsoleRenderer()
-        {
-            screenBuffer = new ScreenSymbol[Settings.ConsoleHeight, Settings.ConsoleWidth];
-        }
-
-        public static void AddTextOnPostion(int row, int col, string text, ConsoleColor textColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black)
-        {
-            // TODO: validate posX and posY
-            for (int i = 0; i < text.Length; i++)
-            {
-                screenBuffer[row, col] = new ScreenSymbol(text[i], textColor, backgroundColor);
-
-                col++;
-            }
-        }
-
-        public static void DrawTextOnPostion(int row, int col, string text, ConsoleColor textColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black) 
+        public static void DrawTextOnPostion(int row, int col, string text, ConsoleColor textColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black)
         {
             Console.SetCursorPosition(col, row);
             Console.ForegroundColor = textColor;
@@ -41,47 +24,6 @@ namespace KillEmAll.ConsoleUI
             while (Console.KeyAvailable)
             {
                 Console.ReadKey(true);
-            }
-        }
-
-        /// <summary>
-        /// ╔════════════════════╗
-        /// ║ asldjasldjalskjd l ║
-        /// ╠════════════════════╣
-        /// ║ asldjasldjalskjd l ║
-        /// ╚════════════════════╝
-        /// </summary>
-
-        public static void RenderAll()
-        {
-            for (int row = 0; row < screenBuffer.GetLength(0); row++)
-            {
-                for (int col = 0; col < screenBuffer.GetLength(1); col++)
-                {
-                    ScreenSymbol currentSymbol = screenBuffer[row, col];
-                    Console.ForegroundColor = currentSymbol.ForegroundColor;
-                    Console.BackgroundColor = currentSymbol.BackgroundColor;
-                    Console.Write(currentSymbol.Symbol);
-                }
-            }
-        }
-
-        public static void ClearAll()
-        {
-            Array.Clear(screenBuffer, 0, screenBuffer.GetLength(0));
-        }
-
-
-        internal static void TestWrite(object sender, EventArgs e)
-        {
-            Console.Clear();
-            int count = 0;
-            Location currentDungeon = (sender as GameManager).CurrentLocation;
-            DrawTextOnPostion(5, 10, string.Format("Name - {0}", currentDungeon.Name));
-
-            foreach (var neighbor in currentDungeon.Exits)
-            {
-                DrawTextOnPostion(10 + count++, 10, neighbor.ToString());
             }
         }
 
@@ -101,6 +43,7 @@ namespace KillEmAll.ConsoleUI
             Player player = (sender as GameManager).Player;
 
             RenderPlayerStats(player);
+            SetCursorToBottom();
         }
 
         private static void RenderPlayerStats(Player player)
@@ -146,11 +89,6 @@ namespace KillEmAll.ConsoleUI
             Console.WriteLine();
         }
 
-        private static void RenderEnemyStats()
-        {
-            throw new NotImplementedException();
-        }
-
         private static void ClearRender()
         {
             Console.Clear();
@@ -158,7 +96,17 @@ namespace KillEmAll.ConsoleUI
 
         private static void RenderNotification()
         {
-           //DrawTextOnPostion(49, 0 , )
+            //DrawTextOnPostion(49, 0 , )
+        }
+
+        public static void SetCursorToBottom()
+        {
+            int x = 0;
+            int y = Console.WindowHeight - 1;
+
+            Console.SetCursorPosition(x, y);
+
+            Console.Write("->");
         }
     }
 }
