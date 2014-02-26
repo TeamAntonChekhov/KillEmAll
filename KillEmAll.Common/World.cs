@@ -9,16 +9,6 @@ namespace KillEmAll.Common
     internal static class World
     {
         private static Location entranceLocation;
-        private static List<Dungeon> dungeons;
-        private static List<Item> items;
-        private static List<Character> characters;
-
-        static World()
-        {
-            dungeons = new List<Dungeon>();
-            items = new List<Item>();
-            characters = new List<Character>();
-        }
 
         public static Location Init()
         {
@@ -52,7 +42,6 @@ namespace KillEmAll.Common
                 new Collection<Item>()
                 {
                     new Potion("Heal Potion"),
-                    new Potion("Heal Potion"),
                 });
             Dungeon thirdDungeon = new Dungeon("SpiderNest",
                new HashSet<Character>()
@@ -63,7 +52,6 @@ namespace KillEmAll.Common
                 },
                new Collection<Item>()
                 {
-                    new Potion("Heal Potion"),
                     new Potion("Heal Potion"),
                 });
             Dungeon fourthDungeon = new Dungeon("SpiritForest",
@@ -76,19 +64,13 @@ namespace KillEmAll.Common
                new Collection<Item>()
                 {
                     new Potion("Heal Potion"),
-                    new Potion("Heal Potion"),
                 });
 
 
-            dungeons.Add(new Dungeon("ZombieLake", new HashSet<Character>(), new Collection<Item>()));
-            dungeons.Add(new Dungeon("SecondDungeon", new HashSet<Character>(), new Collection<Item>()));
-            dungeons.Add(new Dungeon("ThirdDungeon", new HashSet<Character>(), new Collection<Item>()));
-
-            firstDungeon.AddExit(dungeons[0], secondDungeon);
-            secondDungeon.AddExit(firstDungeon);
-            dungeons[0].AddExit(dungeons[1], dungeons[2], firstDungeon);
-            dungeons[1].AddExit(dungeons[0], dungeons[2]);
-            dungeons[2].AddExit(dungeons[0], dungeons[1]);
+            firstDungeon.AddExit(secondDungeon, thirdDungeon);
+            secondDungeon.AddExit(firstDungeon, fourthDungeon);
+            thirdDungeon.AddExit(firstDungeon, fourthDungeon);
+            fourthDungeon.AddExit(secondDungeon, thirdDungeon);
 
             entranceLocation = firstDungeon;
         }

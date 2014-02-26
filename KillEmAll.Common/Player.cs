@@ -27,7 +27,7 @@ namespace KillEmAll.Common
             {
                 if (instance == null)
                 {
-                    instance = new Player("Goshko");
+                    instance = new Player("Traveler");
                 }
                 return instance;
             }
