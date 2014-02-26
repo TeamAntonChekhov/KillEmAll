@@ -30,5 +30,13 @@ namespace KillEmAll.ConsoleUI
             Console.ReadLine();
             return GameState.MainMenu;
         }
+
+        public static void PlayMusicExit()
+        {
+            Console.Beep(495, 700);
+            Console.Beep(528, 400);
+            Console.Beep(660, 400);
+            Console.Beep(880, 700);
+        }
     }
 }
