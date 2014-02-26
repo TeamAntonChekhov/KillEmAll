@@ -80,5 +80,19 @@ namespace KillEmAll.Common
         {
             get { return this.Health <= 0; }
         }
+
+        public override string ToString()
+        {
+            StringBuilder characterInfo = new StringBuilder();
+            string separator = " | ";
+
+            characterInfo.AppendFormat("{0}{1}" , base.ToString(), separator);
+            characterInfo.AppendFormat("HP - {0}{1}", this.Health, separator);
+            characterInfo.AppendFormat("D - {0}{1}", this.Damage, separator);
+            characterInfo.AppendFormat("A - {0}{1}", this.Armor, separator);
+            characterInfo.AppendFormat("Lv - {0}{1}", this.Level, separator);
+
+            return characterInfo.ToString();
+        }
     }
 }

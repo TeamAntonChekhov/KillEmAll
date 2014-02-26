@@ -10,7 +10,8 @@ namespace KillEmAll.Common
         static Player instance;
         private int experience;
 
-        private Player(string name) : base(name, CharacterType.Player)
+        private Player(string name)
+            : base(name, CharacterType.Player)
         {
             this.Level = 1;
             this.Experience = 0;
@@ -104,6 +105,17 @@ namespace KillEmAll.Common
         public bool IsAggressed
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder playerInfo = new StringBuilder();
+            string separator = " | ";
+
+            playerInfo.AppendFormat("{0}", base.ToString());
+            playerInfo.AppendFormat("XP - {0}{1}", this.Experience, separator);
+
+            return playerInfo.ToString();
         }
     }
 }

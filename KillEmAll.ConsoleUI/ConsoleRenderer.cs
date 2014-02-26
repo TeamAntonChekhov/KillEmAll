@@ -94,28 +94,20 @@ namespace KillEmAll.ConsoleUI
             RenderDugeonExits(currentLocation.Exits);
             RenderDungeonItems(currentLocation.Items);
             RenderEnemies(currentLocation.Characters);
-            //RenderEnemyStats();
         }
 
         public static void RenderPlayerInfo(object sender, EventArgs e)
         {
             Player player = (sender as GameManager).Player;
-            //RenderPlayerInventory();
-            RenderPlayerStats();
-            Console.WriteLine("Health - {0}",player.Health);
-            Console.WriteLine("Armor - {0}", player.Armor);
-            Console.WriteLine("Damage - {0}", player.Damage);
-            Console.WriteLine("Level - {0}", player.Level);
+
+            RenderPlayerStats(player);
         }
 
-        private static void RenderPlayerStats()
+        private static void RenderPlayerStats(Player player)
         {
             Console.WriteLine(string.Format("{0,0} {1,0} {2,0}", new string('═', 25), "You", new string('═', 68 - (25 + "You".Length))));
-        }
 
-        private static void RenderPlayerInventory()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine(player.ToString());
         }
 
         private static void RenderCurentDungeon(string currentDungeon)
@@ -151,6 +143,7 @@ namespace KillEmAll.ConsoleUI
             {
                 Console.WriteLine(monster.ToString());
             }
+            Console.WriteLine();
         }
 
         private static void RenderEnemyStats()
@@ -161,6 +154,11 @@ namespace KillEmAll.ConsoleUI
         private static void ClearRender()
         {
             Console.Clear();
+        }
+
+        private static void RenderNotification()
+        {
+           //DrawTextOnPostion(49, 0 , )
         }
     }
 }
