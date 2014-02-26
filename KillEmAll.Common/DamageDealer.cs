@@ -14,7 +14,9 @@ namespace KillEmAll.Common
 
         public override void Attack(IFighter victum)
         {
-            throw new NotImplementedException();
+            double damage = this.damage;
+
+            bool isPlayerDead = victum.TakeHit(damage);
         }
     }
 }

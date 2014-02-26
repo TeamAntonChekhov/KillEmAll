@@ -8,11 +8,14 @@ namespace KillEmAll.Common
     public class Player : Character, IFighter
     {
         static Player instance;
-        private int expirience;
+        private int experience;
 
-        private Player(string name) : base(name, 1, CharacterType.Player)
+        private Player(string name) : base(name, CharacterType.Player)
         {
-            this.expirience = 0;
+            this.Level = 1;
+            this.Experience = 0;
+            this.Health += 50;
+            this.Damage += 5;
         }
 
         public static Player Instance
@@ -27,21 +30,18 @@ namespace KillEmAll.Common
             }
         }
 
-        public int Expirience
+        public int Experience
         {
             get
             {
-                return this.expirience;
+                return this.experience;
+            }
+            private set
+            {
+                this.experience = value;
             }
         }
 
-        public int Level
-        {
-            get
-            {
-                return this.level;
-            }
-        }
 
         public void Attack(IFighter victum)
         {
@@ -69,10 +69,10 @@ namespace KillEmAll.Common
 
         private bool GainExpirience(int expReward)
         {
-            this.expirience += expReward;
+            this.experience += expReward;
             int newLevelExp = BaseExp << (this.level + 1);
 
-            if (this.expirience >= newLevelExp)
+            if (this.experience >= newLevelExp)
             {
                 return true;
             }

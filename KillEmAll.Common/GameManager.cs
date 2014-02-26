@@ -8,6 +8,7 @@ namespace KillEmAll.Common
 {
     public class GameManager
     {
+        internal static GameState gameState;
         private Location currentLocation;
 
         public Player Player
@@ -36,7 +37,7 @@ namespace KillEmAll.Common
 
         public GameState Run()
         {
-            GameState gameState = GameState.NewGame;
+             gameState = GameState.NewGame;
 
             while (true)
             {
@@ -55,11 +56,14 @@ namespace KillEmAll.Common
                 // NPC's turn 
                 // TODO: NPC AI class
                 TryAttack();
+                
+                // Modify world
+                currentLocation.RemoveDestroyedCharacters();
 
                 // If game is ended
-                if (gameState != GameState.NewGame)
+                if (this.Player.IsDestroyed)
                 {
-                    return gameState;
+                    return GameState.GameOver;
                 }
             }
         }
@@ -70,12 +74,11 @@ namespace KillEmAll.Common
             this.currentLocation = newLocation;
         }
 
+
+
         private void TryAttack()
         {
-            IEnumerable<IFighter> enemies =
-                from enemy in this.CurrentLocation.Characters
-                where enemy.CharacterType == CharacterType.Enemy
-                select enemy as IFighter;
+            IEnumerable<IFighter> enemies = GetEnemies();
 
             foreach (var enemy in enemies)
             {
@@ -84,6 +87,15 @@ namespace KillEmAll.Common
                     enemy.Attack(this.Player);
                 }
             }
+        }
+
+        private IEnumerable<IFighter> GetEnemies()
+        {
+            IEnumerable<IFighter> enemies =
+                from enemy in this.CurrentLocation.Characters
+                where enemy.CharacterType == CharacterType.Enemy
+                select enemy as IFighter;
+            return enemies;
         }
 
         private void OnRender()
@@ -96,41 +108,41 @@ namespace KillEmAll.Common
             UserInput(this, new EventArgs());
         }
 
-        public void HandleItemUse(string itemName)
-        {
-            var item = FindObjectByName(this.Player.Inventory, itemName);
+        //public void HandleItemUse(string itemName)
+        //{
+        //    var item = FindObjectByName(this.Player.Inventory, itemName);
 
-            this.Player.Use(item);
-        }
+        //    this.Player.Use(item);
+        //}
 
-        public void HandleItemDrop(string itemName)
-        {
-            var item = FindObjectByName(this.Player.Inventory, itemName);
+        //public void HandleItemDrop(string itemName)
+        //{
+        //    var item = FindObjectByName(this.Player.Inventory, itemName);
 
-            this.Player.RemoveItem(item);
-            this.currentLocation.AddItem(item);
-        }
+        //    this.Player.RemoveItem(item);
+        //    this.currentLocation.AddItem(item);
+        //}
 
-        public void HandleItemPickUp(string itemName)
-        {
-            var item = FindObjectByName(this.currentLocation.Items, itemName);
+        //public void HandleItemPickUp(string itemName)
+        //{
+        //    var item = FindObjectByName(this.currentLocation.Items, itemName);
 
-            this.Player.AddItem(item);
-            this.currentLocation.RemoveItem(item);
-        }
+        //    this.Player.AddItem(item);
+        //    this.currentLocation.RemoveItem(item);
+        //}
 
         public void HandleAttackEnemy(string enemyName)
         {
             var enemy = FindObjectByName(this.currentLocation.Characters, enemyName);
 
-            this.Player.Attack(enemy);
+            this.Player.Attack((IFighter)enemy);
         }
 
         public void HandleChangeLocation(string locationName)
         {
             var location = FindObjectByName(this.currentLocation.Exits, locationName);
 
-            this.currentLocation = location;
+            this.currentLocation = (Location)location;
         }
 
         private GameObject FindObjectByName(IEnumerable<GameObject> gameObjectCollection, string objectName)

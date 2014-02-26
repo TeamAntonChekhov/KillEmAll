@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="KillEmAll.Common.Dungeon">
-    <Position X="8.75" Y="8.5" Width="1.5" />
+    <Position X="7.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dungeon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KillEmAll.Common.GameManager">
-    <Position X="5.75" Y="6.5" Width="1.5" />
+    <Position X="10.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAiAABAIAAAAABCAIQAAAAI=</HashCode>
+      <HashCode>AAAAABAAAAgAACAAAAAAAAmAABAIAAAAABCgIQACAAI=</HashCode>
       <FileName>GameManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -18,10 +18,10 @@
       <Property Name="CurrentLocation" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="KillEmAll.Common.Player" Collapsed="true">
-    <Position X="3.25" Y="7.5" Width="1.5" />
+  <Class Name="KillEmAll.Common.Player">
+    <Position X="5.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAUAIEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAIBAAAAAUAJAQAAAQAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -34,9 +34,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KillEmAll.Common.Enemy">
-    <Position X="1.25" Y="7" Width="1.5" />
+    <Position X="2" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAIAAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAIAAAAABEAIAAAACAAA=</HashCode>
       <FileName>Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -44,12 +44,13 @@
   <Class Name="KillEmAll.Common.Character">
     <Position X="3.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAIEAAAAAEgAAABAAAAg=</HashCode>
+      <HashCode>AAIACACAAAAAgAAQAAAAAAAAAIEAAAABEgAAABAAAAg=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="CharacterType" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="KillEmAll.Common.Item">
     <Position X="12.25" Y="3.75" Width="1.5" />
@@ -59,7 +60,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KillEmAll.Common.Town">
-    <Position X="11.25" Y="8.5" Width="1.5" />
+    <Position X="10" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Town.cs</FileName>
@@ -68,7 +69,7 @@
   <Class Name="KillEmAll.Common.Location">
     <Position X="8.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAEgAAAAAAgAFAAAARQAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAAEgCAAAAAgAFAAAARQAAAEAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -81,7 +82,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KillEmAll.Common.Potion">
-    <Position X="12.25" Y="6.25" Width="1.5" />
+    <Position X="12.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Potion.cs</FileName>
@@ -89,37 +90,37 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KillEmAll.Common.World" Collapsed="true">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAgEAAgAAAABAAAAAAACAAAAAAA=</HashCode>
       <FileName>World.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KillEmAll.Common.DamageDealer">
-    <Position X="0.5" Y="10.25" Width="1.5" />
+    <Position X="1" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DamageDealer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KillEmAll.Common.Healer">
-    <Position X="2.5" Y="10.25" Width="1.5" />
+    <Position X="3.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Healer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="KillEmAll.Common.IUsable" Collapsed="true">
-    <Position X="15.25" Y="2.5" Width="1.5" />
+    <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IUsable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="KillEmAll.Common.IFighter" Collapsed="true">
-    <Position X="15.25" Y="1.75" Width="1.5" />
+    <Position X="16.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABEAIAAAAAAAA=</HashCode>
       <FileName>Interfaces\IFighter.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -137,15 +138,22 @@
       <FileName>Interfaces\IGameObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="KillEmAll.Common.IDestroyable" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDestroyable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="KillEmAll.Common.GameState" Collapsed="true">
-    <Position X="15.25" Y="3.5" Width="1.5" />
+    <Position X="14.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAIAAAAAAAAAAAQBAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\GameState.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="KillEmAll.Common.ItemType" Collapsed="true">
-    <Position X="15.25" Y="4.25" Width="1.5" />
+    <Position X="16.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\ItemType.cs</FileName>
@@ -159,7 +167,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="KillEmAll.Common.CharacterType">
-    <Position X="0.5" Y="5" Width="1.5" />
+    <Position X="3.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>CharacterType.cs</FileName>

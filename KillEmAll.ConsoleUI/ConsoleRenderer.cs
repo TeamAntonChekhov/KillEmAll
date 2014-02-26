@@ -99,8 +99,13 @@ namespace KillEmAll.ConsoleUI
 
         public static void RenderPlayerInfo(object sender, EventArgs e)
         {
+            Player player = (sender as GameManager).Player;
             //RenderPlayerInventory();
             RenderPlayerStats();
+            Console.WriteLine("Health - {0}",player.Health);
+            Console.WriteLine("Armor - {0}", player.Armor);
+            Console.WriteLine("Damage - {0}", player.Damage);
+            Console.WriteLine("Level - {0}", player.Level);
         }
 
         private static void RenderPlayerStats()

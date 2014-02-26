@@ -70,6 +70,14 @@ namespace KillEmAll.Common
             }
         }
 
+        internal void RemoveDestroyedCharacters()
+        {
+            this.characters 
+                .RemoveWhere(character => (character is IDestroyable)
+                    && (character as IDestroyable).IsDestroyed);
+                
+        }
+
         public void AddExit(params Location[] locations)
         {
             foreach (var location in locations)

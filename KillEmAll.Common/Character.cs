@@ -5,36 +5,80 @@ using System.Text;
 
 namespace KillEmAll.Common
 {
-    public abstract class Character : GameObject
+    public abstract class Character : GameObject, IDestroyable
     {
         protected const int BaseExp = 5;
+        protected double levelIncreaseFactor;
         protected int level;
         protected double health;
         protected double damage;
         protected double armor;
 
-        protected Character(string name, int level, CharacterType characterType)
+        protected Character(string name, CharacterType characterType)
             : base(name)
         {
-            this.level = level;
             this.CharacterType = characterType;
-
+            this.levelIncreaseFactor = 1.2;
             // Base stats
-            this.health = 50;
-            this.damage = 10;
+            this.health = 20;
+            this.damage = 5;
             this.armor = 3;
         }
 
         public CharacterType CharacterType { get; private set; }
 
-        public void Attack(IFighter victum)
+        public int Level
         {
-            throw new NotImplementedException();
+            get
+            {
+                return this.level;
+            }
+            protected set
+            {
+                this.level = value;
+            }
         }
 
-        public bool TakeHit(double damage)
+        public double Health
         {
-            throw new NotImplementedException();
+            get
+            {
+                return this.health;
+            }
+
+            protected set
+            {
+                this.health = value;
+            }
+        }
+
+        public double Damage
+        {
+            get
+            {
+                return this.damage;
+            }
+            protected set
+            {
+                this.damage = value;
+            }
+        }
+
+        public double Armor
+        {
+            get
+            {
+                return this.armor;
+            }
+            protected set
+            {
+                this.armor = value;
+            }
+        }
+
+        public virtual bool IsDestroyed
+        {
+            get { return this.Health <= 0; }
         }
     }
 }
