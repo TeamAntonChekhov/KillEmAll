@@ -1,5 +1,4 @@
 ﻿using System;
-
 using KillEmAll.Common;
 
 namespace KillEmAll.ConsoleUI
@@ -17,26 +16,33 @@ namespace KillEmAll.ConsoleUI
             {
                 var command = Console.ReadLine().Split(commandSeparators, splitOptions);
 
-                switch (command[0])
+                try
                 {
-                    case "goto":
-                        HandleChangeLocation(gameManager, command[1]);
-                        break;
-                    case "fight":
-                        HandleAttackEnemy(gameManager, command[1]);
-                        break;
-                    //case "pickup":
-                    //    HandleItemPickUp(gameManager, command[1]);
-                    //    break;
-                    //case "drop":
-                    //    HandleItemDrop(gameManager, command[1]);
-                    //    break;
-                    //case "use":
-                    //    HandleItemUse(gameManager, command[1]);
-                    //    break;
-                    default:
-                        HandleInvalidCommand(command[0]);
-                        break;
+                    switch (command[0])
+                    {
+                        case "goto":
+                            HandleChangeLocation(gameManager, command[1]);
+                            break;
+                        case "fight":
+                            HandleAttackEnemy(gameManager, command[1]);
+                            break;
+                        //case "pickup":
+                        //    HandleItemPickUp(gameManager, command[1]);
+                        //    break;
+                        //case "drop":
+                        //    HandleItemDrop(gameManager, command[1]);
+                        //    break;
+                        //case "use":
+                        //    HandleItemUse(gameManager, command[1]);
+                        //    break;
+                        default:
+                            HandleInvalidCommand(command[0]);
+                            break;
+                    }
+                }
+                catch (GameObjectNotFoundException e)
+                {
+                    ConsoleRenderer.AddNotification(new Notification(e.Message, NotificationType.Error));
                 }
             }
         }

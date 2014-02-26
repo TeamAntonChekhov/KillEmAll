@@ -159,12 +159,7 @@ namespace KillEmAll.Common
 
             if (foundGameObject == null)
             {
-                // TODO: 
-                // Implement GameObjectNotFoundException(string objectName)
-
-                //throw new GameObjectNotFoundException(objectName);
-
-                throw new NotImplementedException();
+                throw new GameObjectNotFoundException(objectName);
             }
             else
             {

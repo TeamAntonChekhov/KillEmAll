@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KillEmAll.Common
 {
-    class InvalidCommandException : ApplicationException
+    public class InvalidCommandException : ApplicationException
     {
         public string Command { get; private set; }
 

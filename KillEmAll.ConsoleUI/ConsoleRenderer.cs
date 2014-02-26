@@ -9,6 +9,7 @@ namespace KillEmAll.ConsoleUI
 {
     public static class ConsoleRenderer
     {
+        private static List<Notification> notifications = new List<Notification>();
 
         public static void DrawTextOnPostion(int row, int col, string text, ConsoleColor textColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black)
         {
@@ -94,9 +95,22 @@ namespace KillEmAll.ConsoleUI
             Console.Clear();
         }
 
-        private static void RenderNotification()
+        public static void AddNotification(Notification notification)
         {
-            //DrawTextOnPostion(49, 0 , )
+            notifications.Add(notification);
+        }
+
+        public static void RenderNotification(object sender, EventArgs e)
+        {
+            for (int i = 0; i < notifications.Count; i++)
+            {
+                Console.SetCursorPosition(0, Console.WindowHeight - 2 - i);
+                Console.Write("#{0}: {1}", notifications[i].NotificationType.ToString(), notifications[i].Message);
+            }
+
+            notifications.Clear();
+
+            SetCursorToBottom();
         }
 
         public static void SetCursorToBottom()

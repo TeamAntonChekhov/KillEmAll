@@ -49,8 +49,9 @@
     <Compile Include="Enumerations\LocationType.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="GameObjectNotFoundException.cs" />
     <Compile Include="Healer.cs" />
-    <Compile Include="IDestroyable.cs" />
+    <Compile Include="Interfaces\IDestroyable.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IExitable.cs" />
     <Compile Include="Interfaces\IFighter.cs" />

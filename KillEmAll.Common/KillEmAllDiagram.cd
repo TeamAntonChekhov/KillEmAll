@@ -21,7 +21,7 @@
   <Class Name="KillEmAll.Common.Player">
     <Position X="5.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAIBAAAAAUAJAQAAAQAA=</HashCode>
+      <HashCode>AAAAAAAIAAAACAAEAAAAAAABAIBAAAAAUAJAQAAAQAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -44,7 +44,7 @@
   <Class Name="KillEmAll.Common.Character">
     <Position X="3.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIACACAAAAAgAAQAAAAAAAAAIEAAAABEgAAABAAAAg=</HashCode>
+      <HashCode>AAIACACAAAAAgAAUAAAAAAAAAIEAAAABEgAAABAAAAg=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -142,7 +142,7 @@
     <Position X="14.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IDestroyable.cs</FileName>
+      <FileName>Interfaces\IDestroyable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="KillEmAll.Common.GameState" Collapsed="true">

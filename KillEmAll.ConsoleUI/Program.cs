@@ -15,6 +15,7 @@ namespace KillEmAll.ConsoleUI
             //newGame.Render += ConsoleRenderer.TestWrite;
             newGame.Render += ConsoleRenderer.RenderLocationInfo;
             newGame.Render += ConsoleRenderer.RenderPlayerInfo;
+            newGame.Render += ConsoleRenderer.RenderNotification;
 
             //newGame.UserInput += ConsoleInput.TestReadInput;
             newGame.UserInput += ConsoleInput.ReadCommand;
