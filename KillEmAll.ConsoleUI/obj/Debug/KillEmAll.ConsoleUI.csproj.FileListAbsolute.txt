@@ -1,0 +1,8 @@
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.ConsoleUI.exe.config
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.ConsoleUI.exe
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.ConsoleUI.pdb
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.Common.dll
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\bin\Debug\KillEmAll.Common.pdb
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.exe
+C:\Users\Ivailo\Documents\TelerikAcademy\OOP\TeamWork\RPG\KillEmAll.ConsoleUI\obj\Debug\KillEmAll.ConsoleUI.pdb
