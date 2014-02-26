@@ -7,6 +7,7 @@ namespace KillEmAll.Common
 {
     public abstract class Character : GameObject
     {
+        protected const int BaseExp = 5;
         protected int level;
         protected double health;
         protected double damage;

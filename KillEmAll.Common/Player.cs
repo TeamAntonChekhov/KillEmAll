@@ -27,6 +27,22 @@ namespace KillEmAll.Common
             }
         }
 
+        public int Expirience
+        {
+            get
+            {
+                return this.expirience;
+            }
+        }
+
+        public int Level
+        {
+            get
+            {
+                return this.level;
+            }
+        }
+
         public void Attack(IFighter victum)
         {
             // TODO: Attack logic and calculate damage
@@ -34,6 +50,34 @@ namespace KillEmAll.Common
 
             bool isDead = victum.TakeHit(damage);
             // TODO: Killed monster logic - exp gain
+
+            if (isDead)
+            {
+                int expReward = BaseExp * victum.Level;
+                bool isLevelUp = this.GainExpirience(expReward);
+                if (isLevelUp)
+                {
+                    this.LevelUp();
+                }
+            }
+        }
+
+        private void LevelUp()
+        {
+            this.level++;
+        }
+
+        private bool GainExpirience(int expReward)
+        {
+            this.expirience += expReward;
+            int newLevelExp = BaseExp << (this.level + 1);
+
+            if (this.expirience >= newLevelExp)
+            {
+                return true;
+            }
+
+            return false;
         }
 
 

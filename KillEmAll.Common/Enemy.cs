@@ -27,6 +27,14 @@ namespace KillEmAll.Common
             } 
         }
 
+        public int Level
+        {
+            get
+            {
+                return this.level;
+            }
+        }
+
         public abstract void Attack(IFighter victum);
 
         public bool TakeHit(double damage)
